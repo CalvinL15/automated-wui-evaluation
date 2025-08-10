@@ -1,9 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e87cb507d61f8d7c6054e3d1c8a27707954d6d7bc59c1e4150a795696ca39fa6
-size 540
-backend/src/metrics_evaluator/xception_model/variables/variables.data-00000-of-00001 filter=lfs diff=lfs merge=lfs -text
-* filter=lfs diff=lfs merge=lfs -text
 *.h5 filter=lfs diff=lfs merge=lfs -text
 *.pt filter=lfs diff=lfs merge=lfs -text
 *.pth filter=lfs diff=lfs merge=lfs -text
+*.onnx filter=lfs diff=lfs merge=lfs -text
+backend/src/metrics_evaluator/xception_model/variables/variables.data-00000-of-00001 filter=lfs diff=lfs merge=lfs -text
 backend/src/metrics_evaluator/xception_model/variables/** filter=lfs diff=lfs merge=lfs -text
