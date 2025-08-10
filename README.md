@@ -1,9 +1,6 @@
-# ma-calvin-liusnando
+# Web-based Platform for Automated Web User Interfaces Evaluation
 
 ***
-
-## Name
-Web-based Platform for Automated Web User Interfaces Evaluation
 
 ## Description
 This project aims to facilitate an easier use of WUI metrics and assessment models for automated UI evaluation through a single, unifying web-based platform.
@@ -54,7 +51,7 @@ This project aims to facilitate an easier use of WUI metrics and assessment mode
   * Alternatively, you can first build the frontend: `pnpm run build` and then run `pnpm run preview`.
 
 ## Support
-You can write to calvin.liusnando@s2021.tu-chemnitz.de for any questions pertaining to this project.
+You can write to liusnandoc@gmail.com for any questions pertaining to this project.
 
 ## Authors and acknowledgment
 Calvin Liusnando (supervised by Dr.-Ing. Sebastian Heil), as part of his thesis work required for the completion of the Master's degree in Web Engineering of TU Chemnitz. 
