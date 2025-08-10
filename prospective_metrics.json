@@ -1,3 +1,77 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7316500a92bcd1d2f2b8a2c1dcb78cac5901a613620ce39e705d79ed707e1caf
-size 2760
+{
+  "metrics": {
+    "p1": {
+      "name": "Grid quality",
+      "description": false,
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "segmentation_required": true,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": false
+      },
+      "references": [
+        {
+          "title": "A. Miniukovich and A. De Angeli (2015). Computation of Interface Aesthetics. CHI'15: Proceedings of the 33rd Annual ACM Conference on Human Factor in Computing Systems, pp. 1163-1172.",
+          "url": "https://doi.org/10.1145/2702123.2702575"
+        }
+      ]
+    },
+    "x1": {
+      "name": "Aesthetic rating score by Webthetics",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "description": "A deep neural network model to automatically evaluate and quantify aesthetics of the input webpage.",
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "segmentation_required": true,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": false
+      },
+      "references": [
+        {
+          "title": "Q. Dou, X. S. Zheng, T. Sun, P-A. Heng (2019). Webthetics: Quantifying Webpage Aesthetics with Deep Learning. International Journal of Human-Computer Studies 124, pp. 56-66.",
+          "url": "https://doi.org/10.1016/j.ijhcs.2018.11.006"
+        }
+      ],
+      "results": [
+        {
+          "name": "Aesthetic rating score by Webthetics",
+          "description": "The score range is from 1 to 9, where 1 indicates the least appealing and 9 the most appealing"
+        }
+      ]
+    },
+    "p3": {
+      "name": "Website Aesthetics Evaluation by Calista",
+      "description": "A comparison-based deep learning system which automatically assess website aesthetics.",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "segmentation_required": false,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": false
+      },
+      "references": [
+        {
+          "title": "A. Delitzas, K. C. Chatzidimitriou, and A. L. Symeonidis (2023). Calista: A deep learning-based system for understanding and evaluating website aesthetics. International Journal of Human-Computer Studies, vol. 175, July 2023, 103019.",
+          "url": "https://doi.org/10.1016/j.ijhcs.2023.103019"
+        }
+      ],
+      "results": [
+        {
+          "name": "Website aesthetic score",
+          "description": "Numerical score ranging from 10 (highest) to 1 (lowest)",
+          "type": "text"
+        }
+      ]
+    }
+  }
+}

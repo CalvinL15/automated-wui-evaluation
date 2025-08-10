@@ -1,3 +1,51 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:443cc0a1830c2ff0b5488f1d3dbdbcab9b3e54f851b4f75ae23f30ff4e52097a
-size 1007
+name: wui-auto-eval
+channels:
+  - conda-forge
+  - pytorch
+  - anaconda
+dependencies:
+  - anaconda::aiohttp
+  - beautifulsoup4
+  - chardet
+  - conda-forge::aiosmtplib
+  - conda-forge::charset-normalizer
+  - conda-forge::fastapi_utils
+  - fastapi
+  - keras
+  - matplotlib
+  - numpy==1.23.4
+  - pandas
+  - pathos
+  - pillow
+  - pip
+  - pytesseract
+  - python-multipart
+  - python==3.9.0
+  - pytorch-cpu==2.2.0
+  - scikit-image
+  - selenium==4.9.0
+  - tensorflow
+  - torchvision-cpu
+  - uvicorn
+  - webdriver-manager
+  - gotrue==2.9.1
+  - httpx==0.26.0
+  - pip:
+      - aiohttp==3.10.8
+      - axe-selenium-python==2.1.6
+      - chromedriver-autoinstaller==0.6.4
+      - deprecation==2.1.0
+      - iniconfig==2.0.0
+      - pluggy==1.5.0
+      - postgrest==0.17.0
+      - pytest==8.3.3
+      - realtime==2.0.5
+      - storage3==0.8.0
+      - strenum==0.4.15
+      - supabase==2.8.1
+      - supafunc==0.6.0
+      - tomli==2.0.2
+      - websockets==13.1
+      - yarl==1.13.1
+      - opencv-python
+      - pyrtools

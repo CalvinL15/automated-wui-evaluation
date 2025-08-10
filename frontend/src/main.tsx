@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e10462321b6c9fd4ed3554b47bafddbf53dbb5ec353bb0bf284d724df98a32e0
-size 796
+import './index.css';
+
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import { SnackbarProvider } from 'notistack';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+
+import App from './App';
+
+const queryClient = new QueryClient();
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <SnackbarProvider
+          maxSnack={3}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center'
+          }}
+          autoHideDuration={5000}
+        >
+          <App />
+        </SnackbarProvider>
+      </QueryClientProvider>
+    </BrowserRouter>
+  </React.StrictMode>,
+)

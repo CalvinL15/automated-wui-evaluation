@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:91226f8a85ae5fe62af98c53bcef7e1424b2a3b899011ee2c478caf9e6ccc05f
-size 50
+{
+  "projects": {
+    "default": "wui-eval"
+  }
+}

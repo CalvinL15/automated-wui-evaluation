@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:92e8cab410b03745158e18a8bc91ecb84b24ba5828f07497eb4d790b783abbd9
-size 680
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12
+  },
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "react/prop-types": "off"
+  },
+  "overrides": [{"files": ["**/.test.*", "test/**"], "rules": {"react/display-name": "off"}}],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

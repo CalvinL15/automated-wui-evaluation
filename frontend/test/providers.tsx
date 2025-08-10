@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:63d8c4aebc0445f57d84861b090069045093851ec94dfa3b299219ebf8b7becc
-size 418
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
+import React, {FC, ReactNode} from 'react';
+
+const getTestQueryClient = () =>
+  new QueryClient({
+    defaultOptions: {queries: {retry: false}}
+  });
+export const getTestQueryClientProvider =
+  (client = getTestQueryClient()): FC<{children?: ReactNode}> =>
+  ({children}) => <QueryClientProvider client={client}>{children}</QueryClientProvider>;

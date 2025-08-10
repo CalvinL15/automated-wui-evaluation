@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b36f33ed6e5673afcfa5cc71ba3f423eccf90656b4c735f63e951ef016172c69
-size 338
+automated-wui-evaluation.zip is the repository of the project.
+It contains the source code as well as the evaluation data for the system performance (metrics computation time).
+Further documentations (in files with the name README.md) can be found within the repository.
+
+URL of the repository in Gitlab: https://gitlab.hrz.tu-chemnitz.de

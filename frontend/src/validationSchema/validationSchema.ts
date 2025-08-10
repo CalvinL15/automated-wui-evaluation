@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3d8a1736cf388ec9358949dac04923d22a5859139db705b026840a253049520e
-size 491
+import * as Yup from "yup";
+
+export const emailValidationSchema = Yup.string().email('Please input a valid email address or leave this field empty!');
+
+export const urlValidationSchema = Yup.string().url('Please input valid URL(s)!').transform((currentValue) => {
+  const doesNotStartWithHttp =
+    currentValue && !(currentValue.startsWith('http://') || currentValue.startsWith('https://'));
+  if (doesNotStartWithHttp) {
+    return `https://${currentValue}`;
+  }
+  return currentValue;
+});

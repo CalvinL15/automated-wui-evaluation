@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03fdcd77a6da44b9c454765b7335e1d05bc2692c377a1e02ff50983681665738
-size 597
+import styled from "@emotion/styled";
+
+export const MetricsInformationContentWrap = styled.div`
+  padding: 2rem;
+`;
+
+export const WUIInputWrap = styled.div`
+  margin: 1.5rem 2rem 0rem;
+`
+
+export const MetricSelectionWrap = styled.div`
+  margin: 1.5rem 2rem 0rem;
+`
+
+export const MetricExtensionWrap = styled.div`
+  margin: 1.5rem 2rem 0rem;
+`
+
+export const ButtonWrap = styled.div`
+  margin: 1rem 0rem;
+  margin-left: auto;
+`;
+
+export const EvaluationButtonWrap = styled.div`
+  margin: 2rem 0rem;
+  margin-left: auto;
+`
+
+export const EvaluationResultContentWrap = styled.div`
+  padding: 2.5rem;
+`;

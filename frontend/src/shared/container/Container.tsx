@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5db99c1511f9e0f81c97425c0c058dd19803aa143980312260163fc91f180a0
-size 497
+import styled from "@emotion/styled";
+import React, { ReactElement, ReactNode } from "react";
+
+interface ContainerPropsType {
+  children: ReactNode | ReactNode[];
+}
+
+const StyledContainer = styled.div`
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid rgb(226, 226, 228);
+  align-self: flex-start;
+  width: 100%;
+  margin-bottom: 1rem;
+`;
+
+export default function Container({children}: ContainerPropsType): ReactElement {
+  return <StyledContainer>{children}</StyledContainer>;
+}

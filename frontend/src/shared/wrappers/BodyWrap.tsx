@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9bada128cf498f5d9d50b982b27aa0420dde0cc972257531a27f92a9090aab4c
-size 465
+import styled from "@emotion/styled";
+import React, { ReactElement, ReactNode } from "react";
+
+interface BodyWrapPropsType {
+  children: ReactNode | ReactNode[];
+}
+
+const StyledBodyWrap = styled.main`
+  flex: 1 1 auto;
+  display: flex;
+  overflow-y: auto;
+  padding: 1rem;
+  @media (min-width: 800px) {
+    padding: 2rem;
+  }
+`;
+export default function BodyWrap({children}: BodyWrapPropsType): ReactElement {
+  return <StyledBodyWrap>{children}</StyledBodyWrap>;
+}

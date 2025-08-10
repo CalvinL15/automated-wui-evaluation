@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7051ce4ae25f72f5fdf8d273bc292ede0af5228e58f4c3d04b94968531848595
-size 451
+import styled from "@emotion/styled";
+import React, { ReactElement, ReactNode } from "react";
+interface PageWrapPropsType {
+  children: ReactNode | ReactNode[];
+}
+
+const StyledPageWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #F1F1F1;
+`;
+
+export default function PageWrap({children}: PageWrapPropsType): ReactElement {
+  return <StyledPageWrap>{children}</StyledPageWrap>;
+}

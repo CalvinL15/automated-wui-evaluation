@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb0872ce9718a85ed76761f7a626399c5e069280570a8e2e41e5e7935738a522
-size 651
+import React, {createContext} from 'react';
+
+import {FileInputRequestType,UrlInputRequestType} from "../types/RequestType";
+
+type RequestsContextType = {
+  urlRequests: UrlInputRequestType[];
+  fileRequests: FileInputRequestType[];
+  setUrlRequests: React.Dispatch<React.SetStateAction<UrlInputRequestType[]>>;
+  setFileRequests: React.Dispatch<React.SetStateAction<FileInputRequestType[]>>;
+}
+
+const RequestContextState = {
+  urlRequests: [],
+  fileRequests: [],
+  setUrlRequests:  () => undefined,
+  setFileRequests: () => undefined
+}
+
+const RequestsContext = createContext<RequestsContextType>(RequestContextState);
+
+export default RequestsContext;

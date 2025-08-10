@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13f0e39e1f75393fa4d6c7b96bdca84591fcf46453dc8ea212bb87bd0876092f
-size 347
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "strict": true,
+    "jsx": "preserve",
+    "target": "ES6",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noUncheckedIndexedAccess": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+}

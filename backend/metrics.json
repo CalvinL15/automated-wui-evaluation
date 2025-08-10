@@ -1,3 +1,639 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40fcae68e90fd6e1b826e150ed58d3f774e4d526884259ff820ac387875a9d79
-size 23766
+{
+  "metrics": {
+    "m1": {
+      "name": "PNG file size",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "description": "The file size of an image in bytes, saved in the PNG format (24 bits per pixel, RGB).",
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "jpeg_conversion_required": false,
+        "segmentation_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": false
+      },
+      "references": [
+        {
+          "title": "A. Miniukovich and A. De Angeli (2015). Computation of Interface Aesthetics. CHI'15: Proceedings of the 33rd Annual ACM Conference on Human Factor in Computing Systems, pp. 1163-1172.",
+          "url": "https://doi.org/10.1145/2702123.2702575"
+        },
+        {
+          "title": "E. Boychuk and M. Bakaev (2019). Entropy and Compression Based Analysis of Web User Interfaces. International Conference on Web Engineering (ICWE) 2019, pp. 253-261.",
+          "url": "https://doi.org/10.1007/978-3-030-19274-7_19"
+        }
+      ],
+      "results": [
+        {
+          "name": "PNG file size",
+          "description": "higher PNG file size indicates higher subjective visual complexity of the image.",
+          "type": "text"
+        }
+      ]
+    },
+    "m2": {
+      "name": "JPEG file size and compression ratio (80)",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "description": "Analysis of an image converted to JPEG format with 80% quality, providing both the JPEG file size in bytes and the compression ratio.",
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "jpeg_conversion_required": true,
+        "segmentation_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": false
+      },
+      "references": [
+        {
+          "title": "R. Rosenholtz, Y. Li, and L. Nakano (2007). Measuring Visual Clutter. Journal of Vision August 2007, vol. 7, 17, pp. 1-22.",
+          "url": "https://doi.org/10.1167/7.2.17"
+        },
+        {
+          "title": "Miniukovich, A. and De Angeli, A. (2015). Computation of Interface Aesthetics. In Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems (CHI '15), pp. 1163-1172. ACM. doi: https://doi.org/10.1145/2702123.2702575",
+          "url": "https://doi.org/10.1145/2702123.2702575"
+        },
+        {
+          "title": "E. Boychuk and M. Bakaev (2019). Entropy and Compression Based Analysis of Web User Interfaces. International Conference on Web Engineering (ICWE) 2019, pp. 253-261.",
+          "url": "https://doi.org/10.1007/978-3-030-19274-7_19"
+        }
+      ],
+      "results": [
+        {
+          "name": "JPEG file size (80)",
+          "description": "Higher JPEG file size indicates higher subjective visual complexity of the image.",
+          "type": "text"
+        },
+        {
+          "name": "JPEG compression ratio (80)",
+          "description": "High compression ratio signifies efficient size reduction from PNG to JPEG with 80% quality.",
+          "type": "text"
+        }
+      ]
+    },
+    "m3": {
+      "name": "Colorfulness (Hassler & Süsstrunk)",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "description": "Quantification of colorfulness in natural images, ignoring hue.",
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "segmentation_required": false,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": false
+      },
+      "references": [
+        {
+          "title": "D. Hasler and S. Süsstrunk (2003). Measuring Colorfulness in Natural Images. Proceedings of IS&T/SPIE Electronic Image 2003: Human Vision and Electronic Imaging VIII, pp. 87-95.",
+          "url": "https://doi.org/10.1117/12.477378"
+        }
+      ],
+      "results": [
+        {
+          "name": "Colorfulness",
+          "description": "The evaluation of the result is based on the range described in the referenced paper by Hasler & Süsstrunk.",
+          "type": "text",
+          "scores": [
+            {
+              "range": [
+                0.0,
+                14.99
+              ],
+              "description": "not colorful"
+            },
+            {
+              "range": [
+                15,
+                32.99
+              ],
+              "description": "slightly colorful"
+            },
+            {
+              "range": [
+                33,
+                44.99
+              ],
+              "description": "moderately colorful"
+            },
+            {
+              "range": [
+                45,
+                58.99
+              ],
+              "description": "averagely colorful"
+            },
+            {
+              "range": [
+                59,
+                81.99
+              ],
+              "description": "quite colorful"
+            },
+            {
+              "range": [
+                81.99,
+                108.99
+              ],
+              "description": "highly colorful"
+            },
+            {
+              "range": [
+                109,
+                null
+              ],
+              "description": "extremely colorful"
+            }
+          ]
+        }
+      ]
+    },
+    "m4": {
+      "name": "CIELAB color average and standard deviation",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "description": "CIELAB is a color space that expresses color as three values: L* for lightness and a* and b* for the green–red and blue–yellow color components.",
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "segmentation_required": false,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": true
+      },
+      "references": [
+        {
+          "title": "D. Hasler and S. Süsstrunk (2003). Measuring Colorfulness in Natural Images. Proceedings of IS&T/SPIE Electronic Image 2003: Human Vision and Electronic Imaging VIII, pp. 87-95.",
+          "url": "https://doi.org/10.1117/12.477378"
+        }
+      ],
+      "results": [
+        {
+          "name": "Lightness average",
+          "description": "",
+          "type": "text"
+        },
+        {
+          "name": "Lightness standard deviation",
+          "description": "",
+          "type": "text"
+        },
+        {
+          "name": "a* (green-red) average",
+          "description": "",
+          "type": "text"
+        },
+        {
+          "name": "a* (green-red) standard deviation",
+          "description": "",
+          "type": "text"
+        },
+        {
+          "name": "b* (blue-yellow) average",
+          "description": "",
+          "type": "text"
+        },
+        {
+          "name": "b* (blue-yellow) standard deviation",
+          "description": "",
+          "type": "text"
+        }
+      ]
+    },
+    "m5": {
+      "name": "White space proportion",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "description": "The proportion of white space in the UI.",
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "segmentation_required": true,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": false
+      },
+      "references": [
+        {
+          "title": "A. Miniukovich and A. De Angeli (2015). Computation of Interface Aesthetics. CHI'15: Proceedings of the 33rd Annual ACM Conference on Human Factor in Computing Systems, pp. 1163-1172.",
+          "url": "https://doi.org/10.1145/2702123.2702575"
+        },
+        {
+          "title": "A. Oulasvirta, S. De Pascale, J. Koch, T. Langerak, J. Jokinen, K. Todi, M. Laine, M. Kristhombuge, Z. Yuxi, A. Miniukovich, G. Palmas, T. Weinkauf (2018).  Aalto Interface Metrics (AIM): A Service and Codebase for Computational GUI Evaluation. Adjunct Proceedings of the 31st Annual ACM Symposium on User Interface Software and Technology (UIST '18 Adjunct), pp. 16-19.",
+          "url": "https://doi.org/10.1145/3266037.3266087"
+        }
+      ],
+      "results": [
+        {
+          "name": "White space proportion",
+          "description": "Value is between 0 to 1. A higher value of the proportion is indicative of poorly distributed content within the UI.",
+          "type": "text"
+        }
+      ]
+    },
+    "m6": {
+      "name": "UIED segmentation",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "description": "GUI element segmentation and detection that integrates both traditional computer vision methods and deep learning methods to achieve accurate detection.",
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "segmentation_required": true,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": false
+      },
+      "references": [
+        {
+          "title": "M. Xie, S. Feng, Z. Xing, J. Chen, and C. Chen (2020). UIED: A Hybrid Tool for GUI Element Detection. Proceedings of the 28th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering, pp. 1655-1659.",
+          "url": "https://doi.org/10.1145/3368089.3417940"
+        },
+        {
+          "title": "A. Oulasvirta, S. De Pascale, J. Koch, T. Langerak, J. Jokinen, K. Todi, M. Laine, M. Kristhombuge, Z. Yuxi, A. Miniukovich, G. Palmas, T. Weinkauf (2018).  Aalto Interface Metrics (AIM): A Service and Codebase for Computational GUI Evaluation. Adjunct Proceedings of the 31st Annual ACM Symposium on User Interface Software and Technology (UIST '18 Adjunct), pp. 16-19.",
+          "url": "https://doi.org/10.1145/3266037.3266087"
+        }
+      ],
+      "results": [
+        {
+          "name": "UIED segmentation detection image",
+          "description": "elements within a red bounding box are detected texts, while the ones in green bounding box are components (i.e. non-text detected elements).",
+          "type": "image"
+        },
+        {
+          "name":"UIED segmentation detection JSON",
+          "description": "the JSON file of the UIED segmentation results",
+          "type": "json"
+        }
+      ]
+    },
+    "m7": {
+      "name": "UMSI (Unified Model of Saliency and Importance)",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "description": "Model predicting human attention on various design classes and natural images, visualized through a heatmap that represent importance values, along with the original image overlaid by the heatmap.",
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "segmentation_required": false,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": false
+      },
+      "references": [
+        {
+          "title": "C. Fosco, V. Casser, A. K. Bedi, P. O'Donovan, A. Hertzmann, and Z. Bylinskii (2020). Predicting Visual Importance Across Graphic Design Types. Proceedings of the 33rd Annual ACM Symposium on User Interface Software and Technology, pp. 249-260.",
+          "url": "https://doi.org/10.1145/3379337.3415825"
+        }
+      ],
+      "results": [
+        {
+          "name": "UMSI prediction heatmap",
+          "description": "Heatmap of the importance value",
+          "type": "image"
+        },
+        {
+          "name": "UMSI prediction heatmap overlay",
+          "description": "The original image overlaid by the heatmap",
+          "type": "image"
+        }
+      ]
+    },
+    "m8": {
+      "name": "Word count",
+      "accepted_input": [
+        "url",
+        "html"
+      ],
+      "description": "Total visible words within the page.",
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "segmentation_required": false,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": true,
+        "lab_conversion_required": false
+      },
+      "references": [
+        {
+          "title": "M. Y. Ivory, R. R. Sinha and M. A. Hearst (2001). Empirically Validated Web Page Design Metrics. Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '01), pp. 53-60.",
+          "url": "https://doi.org/10.1145/365024.365035"
+        }
+      ],
+      "results": [
+        {
+          "name": "Word count",
+          "description": "The classification for the word count value is based on the subdivision introduced in the referenced paper by Ivory et al.",
+          "type": "text",
+          "scores": [
+            {
+              "range": [
+                1,
+                147
+              ],
+              "description": "low word count"
+            },
+            {
+              "range": [
+                148,
+                524
+              ],
+              "description": "medium word count"
+            },
+            {
+              "range": [
+                525,
+                null
+              ],
+              "description": "high word count"
+            }
+          ]
+        }
+      ]
+    },
+    "m9": {
+      "name": "Edge density",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "description": "The percentage of pixels that are edge pixels, obtained through applying the canny edge detector to the grayscale image.",
+      "preprocessing": {
+        "grayscale_conversion_required": true,
+        "segmentation_required": false,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": false
+      },
+      "references": [
+        {
+          "title": "M. L. Mack and A. Oliva (2004). Computational estimation of visual complexity. 12th Annual Object, Perception, Attention, and Memory Conference. Minneapolis, Minnesota",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9bZsr-gAAAAJ&citation_for_view=9bZsr-gAAAAJ:4TOpqqG69KYC"
+        },
+        {
+          "title": "R. Rosenholtz, Y. Li, and L. Nakano (2007). Measuring Visual Clutter. Journal of Vision August 2007, vol. 7, 17, pp. 1-22.",
+          "url": "https://doi.org/10.1167/7.2.17"
+        }
+      ],
+      "results": [
+        {
+          "name": "The percentage of edge pixels",
+          "description": "A higher percentage indicates more visual clutter",
+          "type": "text"
+        },
+        {
+          "name": "Edge-detected image",
+          "description": "",
+          "type": "image"
+        }
+      ]
+    },
+    "m10": {
+      "name": "Feature congestion",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "description": "A measure of display cluster based upon extensive modeling of the saliency of elements of the input.",
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "segmentation_required": false,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": true
+      },
+      "references": [
+        {
+          "title": "R. Rosenholtz, Y. Li, J. Mansfield, and Z. Jin (2005). Feature Congestion: A Measure of Visual Clutter. CHI'05: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems, pp. 761-770.",
+          "url": "https://doi.org/10.1167/6.6.827"
+        },
+        {
+          "title": "R. Rosenholtz, Y. Li, and L. Nakano (2007). Measuring Visual Clutter. Journal of Vision August 2007, vol. 7, 17, pp. 1-22.",
+          "url": "https://doi.org/10.1167/7.2.17"
+        },
+        {
+          "title": "A. Miniukovich and A. De Angeli (2015). Computation of Interface Aesthetics. CHI'15: Proceedings of the 33rd Annual ACM Conference on Human Factor in Computing Systems, pp. 1163-1172.",
+          "url": "https://doi.org/10.1145/2702123.2702575"
+        },
+        {
+          "title": "A. Oulasvirta, S. De Pascale, J. Koch, T. Langerak, J. Jokinen, K. Todi, M. Laine, M. Kristhombuge, Z. Yuxi, A. Miniukovich, G. Palmas, T. Weinkauf (2018).  Aalto Interface Metrics (AIM): A Service and Codebase for Computational GUI Evaluation. Adjunct Proceedings of the 31st Annual ACM Symposium on User Interface Software and Technology (UIST '18 Adjunct), pp. 16-19.",
+          "url": "https://doi.org/10.1145/3266037.3266087"
+        }
+      ],
+      "results": [
+        {
+          "name": "Feature congestion",
+          "description": "A higher value indicates increased visual cluster within the image. The interpretation of the scores is taken from the scoring system used in AIM.",
+          "type": "text",
+          "scores": [
+            {
+              "range": [
+                0,
+                3.771
+              ],
+              "description": "good"
+            },
+            {
+              "range": [
+                3.772,
+                5.5113
+              ],
+              "description": "normal"
+            },
+            {
+              "range": [
+                5.5114,
+                null
+              ],
+              "description": "bad"
+            }
+          ]
+        },
+        {
+          "name": "Feature congestion, visualised",
+          "description": "",
+          "type": "image"
+        }
+      ]
+    },
+    "m11": {
+      "name": "Subband entropy",
+      "description": "A measure of clutter based on measure of the efficiency with which the image can be encoded while maintaining perceptual image quality.",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "segmentation_required": false,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": true
+      },
+      "references": [
+        {
+          "title": "R. Rosenholtz, Y. Li, and L. Nakano (2007). Measuring Visual Clutter. Journal of Vision August 2007, vol. 7, 17, pp. 1-22.",
+          "url": "https://doi.org/10.1167/7.2.17"
+        },
+        {
+          "title": "A. Miniukovich and A. De Angeli (2015). Computation of Interface Aesthetics. CHI'15: Proceedings of the 33rd Annual ACM Conference on Human Factor in Computing Systems, pp. 1163-1172.",
+          "url": "https://doi.org/10.1145/2702123.2702575"
+        },
+        {
+          "title": "A. Oulasvirta, S. De Pascale, J. Koch, T. Langerak, J. Jokinen, K. Todi, M. Laine, M. Kristhombuge, Z. Yuxi, A. Miniukovich, G. Palmas, T. Weinkauf (2018).  Aalto Interface Metrics (AIM): A Service and Codebase for Computational GUI Evaluation. Adjunct Proceedings of the 31st Annual ACM Symposium on User Interface Software and Technology (UIST '18 Adjunct), pp. 16-19.",
+          "url": "https://doi.org/10.1145/3266037.3266087"
+        }
+      ],
+      "results": [
+        {
+          "name": "Subband entropy",
+          "description": "A higher entropy value indicates increased visual clutter within the image. The interpretation of these values is taken from the scoring system used in AIM.",
+          "type": "text",
+          "scores": [
+            {
+              "range": [
+                0,
+                2.7153
+              ],
+              "description": "good"
+            },
+            {
+              "range": [
+                2.7154,
+                3.4693
+              ],
+              "description": "normal"
+            },
+            {
+              "range": [
+                3.4694,
+                null
+              ],
+              "description": "bad"
+            }
+          ]
+        }
+      ]
+    },
+    "m12": {
+      "name": "Shannon's information entropy",
+      "description": "A measure of unpredictability and uncertainty of information in a set of data.  In the context of an image, the entropy quantifies the amount of information contained within the image. The input will be evaluated as a grayscale image.",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "preprocessing": {
+        "grayscale_conversion_required": true,
+        "segmentation_required": false,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": false
+      },
+      "references": [
+        {
+          "title": "E. Boychuk and M. Bakaev (2019). Entropy and Compression Based Analysis of Web User Interfaces. International Conference on Web Engineering (ICWE) 2019, pp. 253-261.",
+          "url": "https://doi.org/10.1007/978-3-030-19274-7_19"
+        }
+      ],
+      "results": [
+        {
+          "name": "Shannon's information entropy",
+          "description": "Higher entropy value indicates a higher level of detail or noise, implying the UI has a lot of information.",
+          "type": "text"
+        }
+      ]
+    },
+    "m13": {
+      "name": "Accessibility checks (with aXe)",
+      "description": "Automated analyzis of web page content for accessibility testing. The output is a JSON object that lists any accessibility violations found.",
+      "accepted_input": [
+        "url"
+      ],
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "segmentation_required": false,
+        "jpeg_conversion_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": false
+      },
+      "references": [
+        {
+          "title": "J. Abascal, M. Arrue and X. Valencia (2019). Tools for Web Accessibility Evaluation. Web Accessibility, pp. 479-503",
+          "url": "https://doi.org/10.1007/978-1-4471-7440-0_26"
+        },
+        {
+          "title": "axe-selenium-python 2.1.6",
+          "url": "https://pypi.org/project/axe-selenium-python/"
+        }
+      ],
+      "results": [
+        {
+          "name": "Accessibility checks report",
+          "description": "JSON file listing accessibility violations found.",
+          "type": "json"
+        },
+        {
+          "name": "Number of violations",
+          "description": "",
+          "type": "text"
+        }
+      ]
+    },
+    "m14": {
+      "name": "NIMA (Neural IMage Assessment)",
+      "description": "CNN-based quality (aesthetics & technical) assessment of images",
+      "accepted_input": [
+        "url",
+        "html",
+        "png"
+      ],
+      "preprocessing": {
+        "grayscale_conversion_required": false,
+        "jpeg_conversion_required": false,
+        "segmentation_required": false,
+        "dom_analysis_required": false,
+        "lab_conversion_required": false
+      },
+      "references": [
+        {
+          "title": "H. Talebi and P. Milanfar (2018). NIMA: Neural Image Assessment. IEEE Transactions on Image Processing, 27(8), pp. 3998-4011",
+          "url": "https://doi.org/10.1109/TIP.2018.2831899"
+        },
+        {
+          "title": "A. Oulasvirta, S. De Pascale, J. Koch, T. Langerak, J. Jokinen, K. Todi, M. Laine, M. Kristhombuge, Z. Yuxi, A. Miniukovich, G. Palmas, T. Weinkauf (2018).  Aalto Interface Metrics (AIM): A Service and Codebase for Computational GUI Evaluation. Adjunct Proceedings of the 31st Annual ACM Symposium on User Interface Software and Technology (UIST '18 Adjunct), pp. 16-19.",
+          "url": "https://doi.org/10.1145/3266037.3266087"
+        }
+      ],
+      "results": [
+        {
+          "type": "text",
+          "name": "NIMA mean score",
+          "description": "The rating score is ranged from 1 to 10, with 10 the highest score and 1 the lowest."
+        },
+        {
+          "type": "text",
+          "name": "NIMA standard deviation score",
+          "description": ""
+        }
+      ]
+    }
+  }
+}
