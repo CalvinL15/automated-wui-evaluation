@@ -3,6 +3,13 @@
 *.pth filter=lfs diff=lfs merge=lfs -text
 *.onnx filter=lfs diff=lfs merge=lfs -text
 variables.data-00000-of-00001 filter=lfs diff=lfs merge=lfs -text
-* filter=lfs diff=lfs merge=lfs -text
+backend/src/metrics_evaluator/xception_cl_fus_aspp_imp1k_10kl-3cc0.1mse-5nss5bc_bs4_ep30_valloss-2.5774_full.h5 filter=lfs diff=lfs merge=lfs -text
 backend/src/metrics_evaluator/xception_model/variables/variables.data-00000-of-00001 filter=lfs diff=lfs merge=lfs -text
+.git/objects/34/185c07e28eebe61d266eaf3678c907395ea3da filter=lfs diff=lfs merge=lfs -text
+.git/objects/2a/274fca3c8fdf3ce18f5500e604968892af4ec6 filter=lfs diff=lfs merge=lfs -text
+.git/objects/dc/16e8235885d683307d8f584c982de27a3b5094 filter=lfs diff=lfs merge=lfs -text
+.git/objects/15/18c9c1bf15692d92d80bd7ea9065a4566bdad1 filter=lfs diff=lfs merge=lfs -text
+.git/lfs/objects/08/eb/08ebe0f806ea906693249661a83ce9062d64a71275918c47178923891be5913e filter=lfs diff=lfs merge=lfs -text
+.git/lfs/objects/f9/7a/f97a3efc5b8d35c60ff3844a05339fb2e1d4eb99181bb643aeee6bd8dd9cb469 filter=lfs diff=lfs merge=lfs -text
+* filter=lfs diff=lfs merge=lfs -text
 backend/src/metrics_evaluator/xception_model/variables/** filter=lfs diff=lfs merge=lfs -text
