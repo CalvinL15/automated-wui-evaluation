@@ -51,7 +51,16 @@ This project aims to facilitate an easier use of WUI metrics and assessment mode
   * Alternatively, you can first build the frontend: `pnpm run build` and then run `pnpm run preview`.
 
 ## Support
-You can write to liusnandoc@gmail.com for any questions pertaining to this project.
+You can write to `liusnandoc@gmail.com` for any questions pertaining to this project.
 
 ## Authors and acknowledgment
-Calvin Liusnando (supervised by Dr.-Ing. Sebastian Heil), as part of his thesis work required for the completion of the Master's degree in Web Engineering of TU Chemnitz. 
+This work was carried out by Calvin Liusnando under the supervision of Dr.-Ing. Sebastian Heil as part of his Master's thesis in Web Engineering at TU Chemnitz. The research was published at the 25th International Conference on Web Engineering (ICWE 2025):
+
+```
+ Heil, S., Liusnando, C., & Gaedke, M. (2025). UIQLab: Automatic Web User Interface Assessment. 25th ICWE2025, Delft, Netherlands.
+```
+
+The official replication package for the published paper can be found [here](https://zenodo.org/records/15920095). 
+
+Please note that any updates to this repository made after August 11th, 2025 are solely the work of Calvin Liusnando.
+
